@@ -39,7 +39,7 @@ class STTEngine:
         # - vosk-model-small-en-us-0.15
         # - vosk-model-en-us-0.22 (larger but more accurate)
         
-        models_dir = os.path.join(os.path.dirname(__file__), "..", "models")
+        models_dir = os.path.join(os.path.dirname(__file__), "models")
         model_name = "vosk-model-small-en-us-0.15"  # Change this to your downloaded model
         
         return os.path.join(models_dir, model_name)
