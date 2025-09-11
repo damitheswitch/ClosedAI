@@ -1,0 +1,7 @@
+.env
+.venv/
+*.wav
+*.zip
+__pycache__/
+*.onnx
+vosk_model/

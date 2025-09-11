@@ -6,6 +6,9 @@ from vosk import Model, KaldiRecognizer
 from piper.voice import PiperVoice
 from openai import OpenAI
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Vosk STT setup
 vosk_model = Model("vosk_model")
@@ -22,7 +25,7 @@ piper_model_path = "piper_voice/en_US-lessac-medium.onnx"
 voice = PiperVoice.load(piper_model_path)
 
 # LLM API setup
-client = OpenAI(api_key="sk-c36ea8e4c694498c9bdfd98ac3350d7e", base_url="https://api.deepseek.com/v1")
+client = OpenAI(api_key=os.getenv("DEEPSEEK_API_KEY"), base_url="https://api.deepseek.com/v1")
 
 def listen():
     print("Listening... (say 'exit' to quit)")
@@ -48,9 +51,18 @@ def speak(text):
 def get_llm_response(user_input):
     response = client.chat.completions.create(
         model="deepseek-chat",
-        messages=[{"role": "user", "content": user_input}]
+        messages=[
+            {"role": "system", "content": "You are a voice assistant. Give short, concise answers. Never use markdown, asterisks, hashes, or any formatting. Speak naturally like a human."},
+            {"role": "user", "content": user_input}]
     )
     return response.choices[0].message.content.strip()
+
+def clean_response(text):
+    # Remove markdown symbols
+    text = text.replace('*', '').replace('#', '').replace('`', '')
+    text = text.replace('**', '').replace('__', '')
+
+    return text
 
 # Main loop
 speak("Hello, I'm your AI assistant. Start talking!")
@@ -61,4 +73,5 @@ while True:
         speak("Goodbye!")
         break
     llm_reply = get_llm_response(user_text)
-    speak(llm_reply)
+    cleaned_reply = clean_response(llm_reply)
+    speak(cleaned_reply)
