@@ -16,6 +16,10 @@
 
 ## 2025-09-09
 
+## Mohamed Amine Ait El Mahjoub
+- installed the environment in my computer( virtualBox )
+- Downloading the libraries in the virtual machine (vosk and TTS and sphinx )
+
 ###Imad Charradi
 - Setting up the RPI
 - Downloading the required libraries (vosk and piper for TTS and STT)
@@ -23,8 +27,18 @@
 
 ## 2025-09-10
 
+## Mohamed Amine Ait El Mahjoub
+-Secure API key and fix model path .
+-deleting the master branche and Resolving Github merge conflict .
+
 ###Imad Charradi
 - Configuring TTS ans STT
 - created python scripts to test the input and output
 - Created python script to make the api call and handle the logic
 - Conducted tests
+
+## 2025-09-11
+
+
+
+
