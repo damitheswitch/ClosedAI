@@ -2,7 +2,7 @@
 
 ## 2025-09-08
 
-### Mohamed
+### Mohamed LAMINI
 - Completed voice command recognition module
 - Fixed bug in text-to-speech output
 
@@ -26,6 +26,11 @@
 - Downloading the required libraries (vosk and piper for TTS and STT)
 - Created an installation script
 
+###Mohamed LAMINI
+For offline use:
+  -Prepare the Raspberry Pi hardware
+  -install the base operating system
+
 ## 2025-09-10
 
 ## Mohamed Amine Ait El Mahjoub
@@ -37,6 +42,11 @@
 - created python scripts to test the input and output
 - Created python script to make the api call and handle the logic
 - Conducted tests
+
+###Mohamed LAMINI
+For offline use:
+  -Install all necessary dependencies 
+  -configure the audio subsystems
 
 ## 2025-09-11
 
