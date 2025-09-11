@@ -21,6 +21,7 @@
 - Downloading the libraries in the virtual machine (vosk and TTS and sphinx )
 
 ###Imad Charradi
+#for online testing via API:
 - Setting up the RPI
 - Downloading the required libraries (vosk and piper for TTS and STT)
 - Created an installation script
@@ -39,6 +40,7 @@
 
 ## 2025-09-11
 
-
-
+###Imad Charradi
+- pushed 1st working version of the ai assistant.
+- renamed the master branch to reflect its content.
 
