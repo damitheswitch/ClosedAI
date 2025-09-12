@@ -7,3 +7,5 @@ __pycache__/
 vosk_model/
 .venv/
 .venv/
+piper_voice/
+vosk_model/
