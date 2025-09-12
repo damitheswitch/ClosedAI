@@ -1,0 +1,69 @@
+# test_assistant.py
+
+import pytest
+from unittest.mock import MagicMock
+import json
+
+# =========================================================================
+# THIS IS THE CRITICAL PART THAT PREVENTS THE CRASH
+# It "fakes" the vosk.Model and piper.voice.PiperVoice classes
+# and the ollama library before your main script is imported.
+# =========================================================================
+@pytest.fixture(autouse=True)
+def mock_external_dependencies(mocker):
+    # Mocks for Vosk
+    mocker.patch('vosk.Model', return_value=MagicMock())
+    mocker.patch('vosk.KaldiRecognizer', return_value=MagicMock())
+    
+    # Mocks for Piper
+    mocker.patch('piper.voice.PiperVoice.load', return_value=MagicMock())
+    mocker.patch('sounddevice.OutputStream', return_value=MagicMock())
+    
+    # Mocks for PyAudio
+    mocker.patch('pyaudio.PyAudio', return_value=MagicMock())
+
+    # Mocks for Ollama
+    mocker.patch('ollama.chat', return_value=MagicMock())
+    
+# Now you can safely import your main script without it crashing
+from voice_assistant_no_button import clean_response, get_llm_response
+
+# ----- Test for the clean_response function -----
+
+def test_clean_response_removes_markdown():
+    """Test that markdown symbols are correctly removed."""
+    input_text = "This is a **test** with *some* `markdown`."
+    expected_output = "This is a test with some markdown."
+    assert clean_response(input_text) == expected_output
+
+def test_clean_response_removes_multiple_symbols():
+    """Test with multiple types of markdown in the same string."""
+    input_text = "Here's a #heading and a __bold__ word."
+    expected_output = "Here's a heading and a bold word."
+    assert clean_response(input_text) == expected_output
+
+def test_clean_response_with_no_markdown():
+    """Test that the function doesn't alter plain text."""
+    input_text = "This is a regular sentence."
+    expected_output = "This is a regular sentence."
+    assert clean_response(input_text) == expected_output
+
+# ----- Test for the get_llm_response function using mocking -----
+def test_get_llm_response_returns_correct_text(mocker):
+    """
+    Test that get_llm_response correctly processes a mock API response.
+    The 'mocker' is a fixture provided by pytest-mock.
+    """
+    # 1. Create a mock for the ollama.chat response structure
+    mock_response = {'message': {'content': "This is a mock LLM response."}}
+    
+    # 2. Use mocker to replace the real ollama.chat function with our mock
+    mocker.patch('ollama.chat', return_value=mock_response)
+
+    user_input = "What is the capital of France?"
+    
+    # 3. Call the function with the mocked dependency
+    response = get_llm_response(user_input)
+
+    # 4. Assert that the function returned the content from our mock
+    assert response == "This is a mock LLM response."
