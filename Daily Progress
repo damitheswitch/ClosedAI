@@ -50,7 +50,17 @@ For offline use:
 
 ## 2025-09-11
 
+## Mohamed Amine Ait El Mahjoub
+-intall the environement for the offline (ollama)
+-intalliing ollama in the raspberry pi
+
 ###Imad Charradi
 - pushed 1st working version of the ai assistant.
 - renamed the master branch to reflect its content.
 
+## 2025-09-12
+
+## Mohamed Amine Ait El Mahjoub
+- write the unit tests for the code 
+- update the whole code after adding the unit tests
+- recording the demo video 
