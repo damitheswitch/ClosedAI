@@ -58,6 +58,10 @@ For offline use:
 - pushed 1st working version of the ai assistant.
 - renamed the master branch to reflect its content.
 
+#### Mohamed LAMINI
+-Installed whisper and kokoro for the offline version
+-tried to fix the code problems
+
 ## 2025-09-12
 
 ## Mohamed Amine Ait El Mahjoub
@@ -67,3 +71,7 @@ For offline use:
 
 ###Imad Charradi
 - worked and completed the addition of the mood detection feature.
+
+### Mohamed Lamini
+-tested the offline version of our project
+
