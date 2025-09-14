@@ -1,7 +1,9 @@
+vosk==0.3.45
+piper-voice==1.2.0
+openai==1.35.3
+sounddevice==0.4.6
+python-dotenv==1.0.1
+numpy==1.26.4
+deepface==0.0.92
+opencv-python==4.10.0.84
 pyaudio==0.2.14
-vosk
-piper-tts
-openai
-sounddevice
-python-dotenv
-numpy
