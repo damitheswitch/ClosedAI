@@ -46,7 +46,7 @@ A voice-activated AI assistant that adapts responses based on mood detection, ru
 - Stream stops with Ctrl+C in ffmpeg terminal.
 
 ## Testing
-- Run unit tests: `pytest tests/ -v` (requires test files in `tests/`).
+- Run unit tests: `python run_tests.py`.
 
 ## Known Issues
 - Mood detection may be inaccurate with poor lighting or angles.
