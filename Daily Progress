@@ -8,8 +8,10 @@
 -I spent time studying my specific role and the technologies I would be responsible for.
 
 ### Mohamed Amine Ait El Mahjoub
-- making the daily progress file
-- making the README of this project 
+- We discussed the project's overall direction .
+- we shared the personal tasks .
+- making the daily progress file .
+- making the README of this project . 
 
 ### Imad Charradi
 - Set up GitHub repository structure
@@ -18,8 +20,9 @@
 ## 2025-09-09
 
 ## Mohamed Amine Ait El Mahjoub
-- installed the environment in my computer( virtualBox )
-- Downloading the libraries in the virtual machine (vosk and TTS and sphinx )
+- i studied my part of the project and the technologies i will use . 
+- installed the environment in my computer( virtualBox ) .
+- Downloading the libraries in the virtual machine (vosk and TTS and sphinx ) .
 
 ###Imad Charradi
 #for online testing via API:
@@ -35,8 +38,9 @@ For offline use:
 ## 2025-09-10
 
 ## Mohamed Amine Ait El Mahjoub
--Secure API key and fix model path .
--deleting the master branche and Resolving Github merge conflict .
+- looked for the convinient and trying to solve them .
+- Secure API key and fix model path .
+- deleting the master branche and Resolving Github merge conflict .
 
 ###Imad Charradi
 - Configuring TTS ans STT
